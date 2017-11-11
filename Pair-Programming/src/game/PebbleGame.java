@@ -5,10 +5,10 @@ import java.util.concurrent.CyclicBarrier;
 
 public class PebbleGame {
 	public static void main(String args[]) {
-		PebbleGame game = new PebbleGame(7);
+		PebbleGame game = new PebbleGame(5);
 	}
 	
-		final CyclicBarrier barrier = new CyclicBarrier(7);
+		final CyclicBarrier barrier = new CyclicBarrier(5);
 		private static Random rand = new Random();
 		private static BlackBag[] blackBags = new BlackBag[3];
 		private static WhiteBag[] whiteBags = new WhiteBag[3];
@@ -16,6 +16,7 @@ public class PebbleGame {
 		private static Thread[] threads;
 		
 		public PebbleGame(int noPlayers) {
+			
 			// Initialise Black and White Bags
 			for (int x = 0; x < 3; x++) {
 				blackBags[x] = new BlackBag(pebbleFile(), x);
@@ -34,7 +35,6 @@ public class PebbleGame {
 			for (int j = 0; j < threads.length; j++) {
 				threads[j].start();
 			}
-			
 		}
 		
 		public int[] pebbleFile() {
@@ -43,18 +43,18 @@ public class PebbleGame {
 		}
 		
 		// Get Random Black Bag
-		static public BlackBag getRandomBlackBag() {
+		static synchronized public BlackBag getRandomBlackBag() {
 			int pos = rand.nextInt(3);
 			return blackBags[pos];
 		}
 		
 		// Get Random White Bag
-		static public WhiteBag getRandomWhiteBag() {
+		static synchronized public WhiteBag getRandomWhiteBag() {
 			int pos = rand.nextInt(3);
 			return whiteBags[pos];
 		}
 		
-		static public WhiteBag getWhiteBag(int pos) {
+		static synchronized public WhiteBag getWhiteBag(int pos) {
 			return whiteBags[pos];
 		}
 		
