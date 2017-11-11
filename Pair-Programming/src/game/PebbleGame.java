@@ -60,17 +60,11 @@ public class PebbleGame {
 		
 		static synchronized public void announceWin(Player player) {
 			// Stop all threads now winner is announced
-			for (int x = 0; x < threads.length; x++) {
-				threads[x].interrupt();
-			}
 			System.out.println(player.name + " Has won the game");
 			System.out.println(player.name + " " + player.getBag());
-			
+			System.exit(0);
 			
 		}
-		
-		
-		
 		
 		
 		
@@ -123,20 +117,18 @@ public class PebbleGame {
 			@Override
 			public void run() {
 				try {
-					System.out.println(this.name + "waiting at barrier" );
 					barrier.await();
+					while(!Thread.interrupted()) {
+						swapPebble(getRandomBlackBag(), getRandomWhiteBag());
+						if (bagWins() && !Thread.interrupted()) {
+							announceWin(this);
+						}	
+					}
 					System.out.println(this.name + "Passed Barrier");
 				} catch (InterruptedException | BrokenBarrierException e) {
 					e.printStackTrace();
 				}
-				System.out.println(this.name + " has started");
-				while(!Thread.interrupted()) {
-					
-					swapPebble(getRandomBlackBag(), getRandomWhiteBag());
-					if (bagWins() && !Thread.interrupted()) {
-						announceWin(this);
-					}
-				}
+				
 			}
 			
 		}
