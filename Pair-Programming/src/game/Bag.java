@@ -20,7 +20,6 @@ public class Bag {
 	
 	// Get a random pebble from the bag
 	public synchronized int removePebble() {
-		System.out.println(pebbles.size());
 		// Get random pebble from the bag
 		int pos = rand.nextInt(pebbles.size());
 		int randomPebble = pebbles.get(pos);
@@ -30,12 +29,12 @@ public class Bag {
 	}
 	
 	// Returns number of pebbles in the bag
-	public int bagSize() {
+	public synchronized int bagSize() {
 		return this.pebbles.size();
 	}
 		
 	// Returns list of all pebbles in the bag
-	public List<Integer> getBag() {
+	public synchronized List<Integer> getBag() {
 		return this.pebbles;
 	}
 
