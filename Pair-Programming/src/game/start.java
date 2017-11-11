@@ -18,11 +18,16 @@ public class start {
 		
 		// Fill Player Bags
 		player1.fillBag(blackBag1);
+		System.out.println("Players Bag: " + player1.getBag());
+		System.out.println("Black Bag: " + blackBag1.getBag());
+		System.out.println("White Bag: " + whiteBag1.getBag());
 		
 		while (noWinner) {
 			// Swap Pebble with random bag
 			player1.swapPebble(blackBag1, whiteBag1);
-			System.out.println(player1.getBag());
+			System.out.println("Players Bag: " + player1.getBag());
+			System.out.println("Black Bag: " + blackBag1.getBag());
+			System.out.println("White Bag: " + whiteBag1.getBag());
 			noWinner = (player1.bagWins()) ? false:true;
 		}
 	}
