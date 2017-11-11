@@ -17,7 +17,7 @@ public class BlackBag extends Bag {
 	}
 	
 	// Add a list of pebble sizes to the bag
-	public void AddPebbleList(List<Integer> pebbles) {
+	public synchronized void AddPebbleList(List<Integer> pebbles) {
 		this.pebbles.addAll(pebbles);
 	}
 }

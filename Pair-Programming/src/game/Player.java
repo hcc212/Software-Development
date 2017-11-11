@@ -2,13 +2,14 @@ package game;
 
 import java.util.Random;
 
-public class Player extends Bag{
+public class Player extends Bag implements Runnable{
 	
-	private Random rand;
+	private Random rand = new Random();
+	String name;
 	
-	public Player() {
+	public Player(String name) {
 		super();
-		rand = new Random();
+		this.name = name;
 	}
 	
 	// Initially fill the bag with 10 pebbles from a black bag
@@ -47,6 +48,17 @@ public class Player extends Bag{
 			return true;
 		} else {
 			return false;
+		}
+	}
+	
+	@Override
+	public void run() {
+		System.out.println(this.name + " has started");
+		while(!Thread.interrupted()) {
+			swapPebble(start.PebbleGame.getRandomBlackBag(), start.PebbleGame.getRandomWhiteBag());
+			if (bagWins() && !Thread.interrupted()) {
+				start.PebbleGame.announceWin(this);
+			}
 		}
 	}
 	
