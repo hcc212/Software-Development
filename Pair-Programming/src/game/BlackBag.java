@@ -25,15 +25,15 @@ public class BlackBag extends Bag {
 	
 	@Override
 	public synchronized int removePebble() {
-		// Perform empty check
-		if (this.bagSize() == 0) {
-			this.AddPebbleList(PebbleGame.getWhiteBag(partnerIndex).EmptyBag());
-		}
 		// Get random pebble from the bag
 		int pos = rand.nextInt(this.pebbles.size());
 		int randomPebble = this.pebbles.get(pos);
 		// Remove pebble from the bag
 		pebbles.remove(pos);
+		// If bag now empty fill it
+		if (this.bagSize() == 0) {
+			this.AddPebbleList(PebbleGame.getWhiteBag(partnerIndex).EmptyBag());
+		}
 		return randomPebble;
 	}
 	
