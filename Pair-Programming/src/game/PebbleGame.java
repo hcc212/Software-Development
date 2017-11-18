@@ -2,20 +2,65 @@ package game;
 import java.util.Random;
 import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CyclicBarrier;
+import java.util.Scanner;
+import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
+import java.io.FileNotFoundException;
+
 
 public class PebbleGame {
+
 	public static void main(String args[]) {
-		PebbleGame game = new PebbleGame(4);
-		game.startGame();
+		//Asks for player input and stores said input in an int value called players
+		System.out.println("Please enter the number of players: ");
+		Scanner playerInput = new Scanner((System.in));
+		int players = playerInput.nextInt();
+		//Until a valid input is given the user is reprompted
+		while(players<=0){
+			System.out.println("Invalid input, please try agin.");
+			players= playerInput.nextInt();
+		}
+
+		try{
+		//Loads the 3 BlackBags into the game
+		playerInput.nextLine(); //needed to clear buffer
+		for (int x = 0; x < 3; x++) {
+		//Reads a file input specified by the player
+		System.out.format("Enter the file name of bag %d to load:%n", x+1);
+		Scanner input = new Scanner(new File(playerInput.nextLine())).useDelimiter(",");
+		//Creates an array to store elements in the file
+		List<Integer> bag = new ArrayList<Integer>();
+		//Adds all the elements to array *is not adding last value
+		while (input.hasNextInt()) {
+			bag.add(input.nextInt());
+		}
+		System.out.println(bag.size());
+		//Checks if number of players is 11x the number of elements in bagArray and then adds it to the PebbleGames BlackBag array blackBag[]
+		if (bag.size()*11>=players){
+			int[] array = bag.stream().mapToInt(i -> i).toArray();
+			PebbleGame.blackBags[x] = new BlackBag(array,x);
+		} else{
+			System.out.println("Bagsize is insufficient");
+		}
+
 	}
-	
-		final CyclicBarrier barrier = new CyclicBarrier(4);
+ PebbleGame game = new PebbleGame(players);
+		 game.startGame();
+	}
+	catch (FileNotFoundException e){
+		 System.out.println("Invalid File Option");
+	 }
+}
+
+
+		final CyclicBarrier barrier= new CyclicBarrier(2);
 		private static Random rand = new Random();
 		private static BlackBag[] blackBags = new BlackBag[3];
 		private static WhiteBag[] whiteBags = new WhiteBag[3];
 		private static Player[] players;
 		private static Thread[] threads;
-		
+
 		public PebbleGame(int noPlayers) {
 			// Initialise Black and White Bags
 			for (int x = 0; x < 3; x++) {
@@ -29,60 +74,60 @@ public class PebbleGame {
 				players[i] = new Player("Player " + i, barrier);
 				players[i].fillBag(getRandomBlackBag());
 				threads[i] = new Thread(players[i]);
-				System.out.println("Created player: " + i);
+				System.out.println("Created player: " + (i+1));
 			}
 		}
-		
+
 		public void startGame() {
 			// Start threads
 			for (int j = 0; j < threads.length; j++) {
 				threads[j].start();
 			}
 		}
-		
+//
 		public int[] pebbleFile() {
 			int[] testData = {10,22,3,14,5,6,7,17,9,10,11,12,13,1,15,16,17,18,19,20,10,22,3,14,5,6,7,17,9,10,11,12,13,1,15,16,17,18,19,20,10,22,3,14,5,6,7,17,9,10,11,12,13,1,15,16,17,18,19,20};
 			return testData;
 		}
-		
+
 		// Get Random Black Bag
 		static synchronized public BlackBag getRandomBlackBag() {
 			int pos = rand.nextInt(3);
 			return blackBags[pos];
 		}
-		
+
 		// Get Random White Bag
 		static synchronized public WhiteBag getRandomWhiteBag() {
 			int pos = rand.nextInt(3);
 			return whiteBags[pos];
 		}
-		
+
 		static synchronized public WhiteBag getWhiteBag(int pos) {
 			return whiteBags[pos];
 		}
-		
+
 		static synchronized public void announceWin(Player player) {
 			// Stop all threads now winner is announced
 			System.out.println(player.name + " Has won the game");
 			System.out.println(player.name + " " + player.getBag());
 			System.exit(0);
-			
+
 		}
-		
-		
-		
+
+
+
 		class Player extends Bag implements Runnable{
-			
+
 			private Random rand = new Random();
 			String name;
 			private CyclicBarrier barrier;
-			
+
 			public Player(String name, CyclicBarrier barrier) {
 				super();
 				this.name = name;
 				this.barrier = barrier;
 			}
-			
+
 			// Initially fill the bag with 10 pebbles from a black bag
 			public void fillBag(BlackBag bbag) {
 				for (int x = 0; x < 10; x++) {
@@ -90,20 +135,20 @@ public class PebbleGame {
 					this.addPebble(newPebble);
 				}
 			}
-			
+
 			// Chuck random pebble into the white bag and then take a pebble from the black bag
-			public synchronized void swapPebble(BlackBag bbag, WhiteBag wbag) {		
+			public synchronized void swapPebble(BlackBag bbag, WhiteBag wbag) {
 				// Remove pebble from players bag
 				int oldPebble = this.removePebble();
 				// Add pebble to white bag
 				wbag.addPebble(oldPebble);
 				// Get new pebble from black bag
 				int newPebble = bbag.removePebble();
-				
+
 				// Add pebble to players bag
 				this.addPebble(newPebble);
 			}
-			
+
 			// Check players bag to see if they have won
 			public synchronized boolean bagWins() {
 				int total = 0;
@@ -116,7 +161,7 @@ public class PebbleGame {
 					return false;
 				}
 			}
-			
+
 			@Override
 			public void run() {
 				try {
@@ -125,15 +170,14 @@ public class PebbleGame {
 						swapPebble(getRandomBlackBag(), getRandomWhiteBag());
 						if (bagWins() && !Thread.interrupted()) {
 							announceWin(this);
-						}	
+						}
 					}
 					System.out.println(this.name + "Passed Barrier");
 				} catch (InterruptedException | BrokenBarrierException e) {
 					e.printStackTrace();
 				}
-				
+
 			}
-			
+
 		}
 }
-
