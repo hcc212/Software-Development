@@ -5,11 +5,11 @@ import java.util.concurrent.CyclicBarrier;
 
 public class PebbleGame {
 	public static void main(String args[]) {
-		PebbleGame game = new PebbleGame(4);
+		PebbleGame game = new PebbleGame(3);
 		game.startGame();
 	}
 	
-		final CyclicBarrier barrier = new CyclicBarrier(4);
+		final CyclicBarrier barrier = new CyclicBarrier(3);
 		private static Random rand = new Random();
 		private static BlackBag[] blackBags = new BlackBag[3];
 		private static WhiteBag[] whiteBags = new WhiteBag[3];
@@ -39,7 +39,7 @@ public class PebbleGame {
 				threads[j].start();
 			}
 		}
-		
+
 		public int[] pebbleFile() {
 			int[] testData = {10,22,3,14,5,6,7,17,9,10,11,12,13,1,15,16,17,18,19,20,10,22,3,14,5,6,7,17,9,10,11,12,13,1,15,16,17,18,19,20,10,22,3,14,5,6,7,17,9,10,11,12,13,1,15,16,17,18,19,20};
 			return testData;
@@ -73,7 +73,6 @@ public class PebbleGame {
 		
 		class Player extends Bag implements Runnable{
 			
-			private Random rand = new Random();
 			String name;
 			private CyclicBarrier barrier;
 			
@@ -82,6 +81,10 @@ public class PebbleGame {
 				this.name = name;
 				this.barrier = barrier;
 			}
+			
+//			public void writeActionToFile(String action) {
+//				
+//			}
 			
 			// Initially fill the bag with 10 pebbles from a black bag
 			public void fillBag(BlackBag bbag) {
@@ -95,6 +98,7 @@ public class PebbleGame {
 			public synchronized void swapPebble(BlackBag bbag, WhiteBag wbag) {		
 				// Remove pebble from players bag
 				int oldPebble = this.removePebble();
+				//this.writeActionToFile("Removed pebble" + oldPebble);
 				// Add pebble to white bag
 				wbag.addPebble(oldPebble);
 				// Get new pebble from black bag
