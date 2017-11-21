@@ -1,4 +1,25 @@
-Player 4's hand is [17, 22, 3, 20, 18, 15, 9, 1, 10, 1].
-Player 4 has discarded a pebble of weight 10 to bag .
-Player 4 has retrieved a pebble of weight 6 from .
-Player 4's hand is [17, 22, 3, 20, 18, 15, 9, 1, 1, 6]
+Player 4's hand is [14, 1, 6, 11, 9, 15, 5, 18, 19, 5].
+Player 4 has discarded a pebble of weight 1 to bag A.
+Player 4 has retrieved a pebble of weight 9 from bag X.
+Player 4's hand is [14, 6, 11, 9, 15, 5, 18, 19, 5, 9]
+Player 4 has discarded a pebble of weight 14 to bag B.
+Player 4 has retrieved a pebble of weight 5 from bag Y.
+Player 4's hand is [6, 11, 9, 15, 5, 18, 19, 5, 9, 5]
+Player 4 has discarded a pebble of weight 5 to bag C.
+Player 4 has retrieved a pebble of weight 9 from bag Z.
+Player 4's hand is [6, 11, 9, 15, 5, 18, 19, 9, 5, 9]
+Player 4 has discarded a pebble of weight 15 to bag B.
+Player 4 has retrieved a pebble of weight 22 from bag Y.
+Player 4's hand is [6, 11, 9, 5, 18, 19, 9, 5, 9, 22]
+Player 4 has discarded a pebble of weight 5 to bag A.
+Player 4 has retrieved a pebble of weight 11 from bag X.
+Player 4's hand is [6, 11, 9, 5, 18, 19, 9, 9, 22, 11]
+Player 4 has discarded a pebble of weight 19 to bag A.
+Player 4 has retrieved a pebble of weight 12 from bag X.
+Player 4's hand is [6, 11, 9, 5, 18, 9, 9, 22, 11, 12]
+Player 4 has discarded a pebble of weight 11 to bag C.
+Player 4 has retrieved a pebble of weight 10 from bag Z.
+Player 4's hand is [6, 11, 9, 5, 18, 9, 9, 22, 12, 10]
+Player 4 has discarded a pebble of weight 9 to bag A.
+Player 4 has retrieved a pebble of weight 6 from bag X.
+Player 4's hand is [6, 11, 9, 5, 18, 9, 22, 12, 10, 6]

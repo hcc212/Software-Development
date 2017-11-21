@@ -1,0 +1,4 @@
+Player 9's hand is [7, 3, 9, 12, 19, 16, 17, 7, 17, 20].
+Player 9 has discarded a pebble of weight 7 to bag B.
+Player 9 has retrieved a pebble of weight 10 from bag Y.
+Player 9's hand is [3, 9, 12, 19, 16, 17, 7, 17, 20, 10]

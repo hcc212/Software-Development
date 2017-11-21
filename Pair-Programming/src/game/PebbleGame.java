@@ -17,7 +17,7 @@ public class PebbleGame {
 		System.out.println("Please enter the number of players: ");
 		Scanner playerInput = new Scanner((System.in));
 		int players;
-		//Checks whether the input is an integer
+		//Checks the input is an integer and it's value is greater than 0
 		while (!playerInput.hasNextInt()||(players=playerInput.nextInt())<=0){
 			playerInput.nextLine();
 			System.out.println("Invalid input, please try again.");
@@ -26,43 +26,48 @@ public class PebbleGame {
 				//Loads the 3 BlackBags into the game
 				playerInput.nextLine(); //needed to clear buffer
 				for (int x = 0; x < 3; x++) {
-					//Reads a file input specified by the player
+					//Reads a file input specified by the player and breaks its input's according to ',' seperation
 					System.out.format("Enter the file name of bag %d to load:%n", x+1);
 					Scanner input = new Scanner(new File(playerInput.nextLine())).useDelimiter("[$,|\\n]");
-					//Creates an array to store elements in the file
+					//Creates an ArrayList to store elements in the file
 					List<Integer> bag = new ArrayList<Integer>();
-					//Adds all the elements to array *is not adding last value
-				while (input.hasNextInt()) {
-					bag.add(input.nextInt());
-				}
-
-				try{
-					bag.add(Integer.parseInt(input.next().trim()));
-				} catch (NumberFormatException e){
-							System.out.println("Invalid value found in file " + (x+1));
-							System.exit(0);
-				}
-				//Checks if number of players is 11x the number of elements in bagArray and then adds it to the PebbleGames BlackBag array blackBag[]
-				if (bag.size()>=11*players){
-					int[] array = bag.stream().mapToInt(i -> i).toArray();
-					PebbleGame.blackBags[x] = new BlackBag(array,x);
-				} else{
-					System.out.println("Bagsize is insufficient");
-					System.exit(0);
+					//Adds all the elements to ArrayList
+					while (input.hasNextInt()) {
+						bag.add(input.nextInt());
 					}
-			}
+					//Last value needed to be added seperately as it is not in the input
+					try{
+						bag.add(Integer.parseInt(input.next().trim()));
+					} catch (NumberFormatException e){
+								System.out.println("Invalid value found in file " + (x+1));
+								System.exit(0);
+					}
+					//Checks if number of players is 11x the number of elements in bagArray and then adds it to PebbleGames BlackBag array blackBag[]
+					if (bag.size()>=11*players){
+						//Creates an int[] from the ArrayList bag
+						int[] array = bag.stream().mapToInt(i -> i).toArray();
+						PebbleGame.blackBags[x] = new BlackBag(array,x);
+					} else{
+						System.out.println("Bagsize is insufficient");
+						System.exit(0);
+						}
+		}
 		PebbleGame game = new PebbleGame(players);
 		game.startGame();
 
 		}catch (FileNotFoundException e){
-		 		System.out.println("Invalid File Option");
+			//Catch for an invalid file location
+		 	System.out.println("Invalid File Option");
 	 	}
 	}
 
 	final CyclicBarrier barrier= new CyclicBarrier(2);
 	private static Random rand = new Random();
+	//Creates an array to store the 3 Blackbags
 	private static BlackBag[] blackBags = new BlackBag[3];
+	//Creates an array to store the 3 Whitebags
 	private static WhiteBag[] whiteBags = new WhiteBag[3];
+	//Creates an array for the players and the threads
 	private static Player[] players;
 	private static Thread[] threads;
 
@@ -120,9 +125,12 @@ public class PebbleGame {
 	}
 
 	static synchronized public void announceWin(Player player) {
-		// Stop all threads now winner is announced
+		//Announces the Player input as the winner and closes the game.
 		System.out.println(player.name + " Has won the game");
-		System.out.println(player.name + " " + player.getBag());
+		//Writes the winner to file
+		player.file.println(player.name + " has won." );
+		System.out.println(player.name + "'s winning hand is " + player.getBag());
+		//For loop which closes the stream for each player
 		for (int x=0; x < players.length; x++){
 			players[x].file.close();
 		}
@@ -155,17 +163,17 @@ public class PebbleGame {
 			int oldPebble = this.removePebble();
 			// Add pebble to white bag
 			wbag.addPebble(oldPebble);
-			this.file.println(this.name + " has discarded a pebble of weight " + oldPebble + " to bag ." );
+			this.file.println(this.name + " has discarded a pebble of weight " + oldPebble + " to bag " + bbag.partnerId + "." );
 			// Get new pebble from black bag
 			int newPebble = bbag.removePebble();
-			this.file.println(this.name + " has retrieved a pebble of weight " + newPebble + " from .");
+			this.file.println(this.name + " has retrieved a pebble of weight " + newPebble + " from bag " + bbag.bagId + ".");
 			// Add pebble to players bag
 			this.addPebble(newPebble);
 			this.file.println(this.name + "'s hand is " + this.getBag().toString());
 
 			}
 
-			// Check players bag to see if they have won
+		//Check players bag to see if they have won
 		public synchronized boolean bagWins() {
 			int total = 0;
 			for (int x = 0; x < this.pebbles.size(); x++) {
@@ -188,7 +196,7 @@ public class PebbleGame {
 							announceWin(this);
 						}
 					}
-					System.out.println(this.name + "Passed Barrier"); //** not printed before from what i can see
+					System.out.println(this.name + "Passed Barrier");
 				} catch (InterruptedException | BrokenBarrierException e) {
 					e.printStackTrace();
 				}
