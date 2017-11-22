@@ -1,0 +1,4 @@
+Player 5's hand is [22, 5, 6, 3, 22, 19, 5, 5, 10, 14].
+Player 5 has discarded a pebble of weight 5 to bag B.
+Player 5 has retrieved a pebble of weight 10 from bag Y.
+Player 5's hand is [22, 5, 6, 3, 22, 19, 5, 10, 14, 10]

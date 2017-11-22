@@ -1,1 +1,4 @@
-Player 3's hand is [10, 17, 5, 9, 22, 7, 12, 20, 16, 20].
+Player 3's hand is [9, 19, 14, 14, 11, 10, 5, 13, 16, 17].
+Player 3 has discarded a pebble of weight 11 to bag A.
+Player 3 has retrieved a pebble of weight 10 from bag X.
+Player 3's hand is [9, 19, 14, 14, 10, 5, 13, 16, 17, 10]

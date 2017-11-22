@@ -1,40 +1,4 @@
-Player 2's hand is [17, 11, 3, 19, 19, 18, 7, 11, 16, 20].
-Player 2 has discarded a pebble of weight 17 to bag .
-Player 2 has retrieved a pebble of weight 9 from .
-Player 2's hand is [11, 3, 19, 19, 18, 7, 11, 16, 20, 9]
-Player 2 has discarded a pebble of weight 11 to bag .
-Player 2 has retrieved a pebble of weight 16 from .
-Player 2's hand is [3, 19, 19, 18, 7, 11, 16, 20, 9, 16]
-Player 2 has discarded a pebble of weight 16 to bag .
-Player 2 has retrieved a pebble of weight 17 from .
-Player 2's hand is [3, 19, 19, 18, 7, 11, 16, 20, 9, 17]
-Player 2 has discarded a pebble of weight 9 to bag .
-Player 2 has retrieved a pebble of weight 13 from .
-Player 2's hand is [3, 19, 19, 18, 7, 11, 16, 20, 17, 13]
-Player 2 has discarded a pebble of weight 13 to bag .
-Player 2 has retrieved a pebble of weight 9 from .
-Player 2's hand is [3, 19, 19, 18, 7, 11, 16, 20, 17, 9]
-Player 2 has discarded a pebble of weight 11 to bag .
-Player 2 has retrieved a pebble of weight 13 from .
-Player 2's hand is [3, 19, 19, 18, 7, 16, 20, 17, 9, 13]
-Player 2 has discarded a pebble of weight 17 to bag .
-Player 2 has retrieved a pebble of weight 17 from .
-Player 2's hand is [3, 19, 19, 18, 7, 16, 20, 9, 13, 17]
-Player 2 has discarded a pebble of weight 9 to bag .
-Player 2 has retrieved a pebble of weight 6 from .
-Player 2's hand is [3, 19, 19, 18, 7, 16, 20, 13, 17, 6]
-Player 2 has discarded a pebble of weight 19 to bag .
-Player 2 has retrieved a pebble of weight 10 from .
-Player 2's hand is [3, 19, 18, 7, 16, 20, 13, 17, 6, 10]
-Player 2 has discarded a pebble of weight 19 to bag .
-Player 2 has retrieved a pebble of weight 18 from .
-Player 2's hand is [3, 18, 7, 16, 20, 13, 17, 6, 10, 18]
-Player 2 has discarded a pebble of weight 17 to bag .
-Player 2 has retrieved a pebble of weight 22 from .
-Player 2's hand is [3, 18, 7, 16, 20, 13, 6, 10, 18, 22]
-Player 2 has discarded a pebble of weight 10 to bag .
-Player 2 has retrieved a pebble of weight 10 from .
-Player 2's hand is [3, 18, 7, 16, 20, 13, 6, 18, 22, 10]
-Player 2 has discarded a pebble of weight 18 to bag .
-Player 2 has retrieved a pebble of weight 10 from .
-Player 2's hand is [3, 7, 16, 20, 13, 6, 18, 22, 10, 10]
+Player 2's hand is [5, 17, 6, 7, 16, 20, 7, 15, 22, 10].
+Player 2 has discarded a pebble of weight 20 to bag A.
+Player 2 has retrieved a pebble of weight 13 from bag X.
+Player 2's hand is [5, 17, 6, 7, 16, 7, 15, 22, 10, 13]

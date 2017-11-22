@@ -1,0 +1,19 @@
+Player 6's hand is [19, 19, 10, 18, 12, 16, 1, 16, 18, 20].
+Player 6 has discarded a pebble of weight 19 to bag B.
+Player 6 has retrieved a pebble of weight 20 from bag Y.
+Player 6's hand is [19, 10, 18, 12, 16, 1, 16, 18, 20, 20]
+Player 6 has discarded a pebble of weight 18 to bag A.
+Player 6 has retrieved a pebble of weight 17 from bag X.
+Player 6's hand is [19, 10, 18, 12, 16, 1, 16, 20, 20, 17]
+Player 6 has discarded a pebble of weight 20 to bag A.
+Player 6 has retrieved a pebble of weight 9 from bag X.
+Player 6's hand is [19, 10, 18, 12, 16, 1, 16, 20, 17, 9]
+Player 6 has discarded a pebble of weight 20 to bag B.
+Player 6 has retrieved a pebble of weight 9 from bag Y.
+Player 6's hand is [19, 10, 18, 12, 16, 1, 16, 17, 9, 9]
+Player 6 has discarded a pebble of weight 9 to bag B.
+Player 6 has retrieved a pebble of weight 10 from bag Y.
+Player 6's hand is [19, 10, 18, 12, 16, 1, 16, 17, 9, 10]
+Player 6 has discarded a pebble of weight 16 to bag A.
+Player 6 has retrieved a pebble of weight 1 from bag X.
+Player 6's hand is [19, 10, 18, 12, 16, 1, 17, 9, 10, 1]
