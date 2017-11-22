@@ -1,0 +1,52 @@
+Player 1's hand is [10, 10, 14, 5, 15, 11, 3, 9, 10, 14].
+Player 1 has discarded a pebble of weight 9 to bag .
+Player 1 has retrieved a pebble of weight 9 from .
+Player 1's hand is [10, 10, 14, 5, 15, 11, 3, 10, 14, 9]
+Player 1 has discarded a pebble of weight 3 to bag .
+Player 1 has retrieved a pebble of weight 3 from .
+Player 1's hand is [10, 10, 14, 5, 15, 11, 10, 14, 9, 3]
+Player 1 has discarded a pebble of weight 14 to bag .
+Player 1 has retrieved a pebble of weight 5 from .
+Player 1's hand is [10, 10, 14, 5, 15, 11, 10, 9, 3, 5]
+Player 1 has discarded a pebble of weight 9 to bag .
+Player 1 has retrieved a pebble of weight 14 from .
+Player 1's hand is [10, 10, 14, 5, 15, 11, 10, 3, 5, 14]
+Player 1 has discarded a pebble of weight 11 to bag .
+Player 1 has retrieved a pebble of weight 15 from .
+Player 1's hand is [10, 10, 14, 5, 15, 10, 3, 5, 14, 15]
+Player 1 has discarded a pebble of weight 10 to bag .
+Player 1 has retrieved a pebble of weight 16 from .
+Player 1's hand is [10, 14, 5, 15, 10, 3, 5, 14, 15, 16]
+Player 1 has discarded a pebble of weight 15 to bag .
+Player 1 has retrieved a pebble of weight 6 from .
+Player 1's hand is [10, 14, 5, 10, 3, 5, 14, 15, 16, 6]
+Player 1 has discarded a pebble of weight 10 to bag .
+Player 1 has retrieved a pebble of weight 10 from .
+Player 1's hand is [10, 14, 5, 3, 5, 14, 15, 16, 6, 10]
+Player 1 has discarded a pebble of weight 5 to bag .
+Player 1 has retrieved a pebble of weight 13 from .
+Player 1's hand is [10, 14, 5, 3, 14, 15, 16, 6, 10, 13]
+Player 1 has discarded a pebble of weight 3 to bag .
+Player 1 has retrieved a pebble of weight 6 from .
+Player 1's hand is [10, 14, 5, 14, 15, 16, 6, 10, 13, 6]
+Player 1 has discarded a pebble of weight 15 to bag .
+Player 1 has retrieved a pebble of weight 17 from .
+Player 1's hand is [10, 14, 5, 14, 16, 6, 10, 13, 6, 17]
+Player 1 has discarded a pebble of weight 14 to bag .
+Player 1 has retrieved a pebble of weight 10 from .
+Player 1's hand is [10, 14, 5, 16, 6, 10, 13, 6, 17, 10]
+Player 1 has discarded a pebble of weight 6 to bag .
+Player 1 has retrieved a pebble of weight 22 from .
+Player 1's hand is [10, 14, 5, 16, 10, 13, 6, 17, 10, 22]
+Player 1 has discarded a pebble of weight 13 to bag .
+Player 1 has retrieved a pebble of weight 9 from .
+Player 1's hand is [10, 14, 5, 16, 10, 6, 17, 10, 22, 9]
+Player 1 has discarded a pebble of weight 6 to bag .
+Player 1 has retrieved a pebble of weight 3 from .
+Player 1's hand is [10, 14, 5, 16, 10, 17, 10, 22, 9, 3]
+Player 1 has discarded a pebble of weight 10 to bag .
+Player 1 has retrieved a pebble of weight 6 from .
+Player 1's hand is [14, 5, 16, 10, 17, 10, 22, 9, 3, 6]
+Player 1 has discarded a pebble of weight 22 to bag .
+Player 1 has retrieved a pebble of weight 10 from .
+Player 1's hand is [14, 5, 16, 10, 17, 10, 9, 3, 6, 10]

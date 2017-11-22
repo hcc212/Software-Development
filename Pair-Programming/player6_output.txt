@@ -1,0 +1,5 @@
+Player 6's hand is [10, 11, 4, 4, 11, 18, 11, 8, 15, 12].
+Player 6 has discarded a pebble of weight 12 to bag A
+Player 6 has retrieved a pebble of weight 17 from X
+Player 6's hand is [10, 11, 4, 4, 11, 18, 11, 8, 15, 17]
+Player 4 has won.

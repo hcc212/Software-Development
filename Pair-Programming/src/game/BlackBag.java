@@ -6,12 +6,28 @@ public class BlackBag extends Bag {
 	
 	// Stores all the pebbles of the black bag
 	private Random rand;
-	private int partnerIndex;
+	private int index;
+	private String name;
+	private String partnerName;
 	
 	// Initialise the bag with an array of pebble sizes to fill the bag
-	public BlackBag(int[] pebbles, int partnerIndex) {
+	public BlackBag(int[] pebbles, int index) {
 		super();
-		this.partnerIndex = partnerIndex;
+		this.index = index;
+		switch (index) {
+		case 0:
+			this.name = "X";
+			this.partnerName = "A";
+			break;
+		case 1:
+			this.name = "Y";
+			this.partnerName = "B";
+			break;
+		case 2:
+			this.name = "Z";
+			this.partnerName = "C";
+			break;
+		}
 		for (int x = 0; x < pebbles.length; x++) {
 			this.pebbles.add(pebbles[x]);
 		}
@@ -32,9 +48,21 @@ public class BlackBag extends Bag {
 		pebbles.remove(pos);
 		// If bag now empty fill it
 		if (this.bagSize() == 0) {
-			this.AddPebbleList(PebbleGame.getWhiteBag(partnerIndex).EmptyBag());
+			this.AddPebbleList(PebbleGame.getWhiteBag(index).EmptyBag());
 		}
 		return randomPebble;
+	}
+	
+	public int getIndex() {
+		return index;
+	}
+	
+	public String getName() {
+		return name;
+	}
+	
+	public String getPartnerName() {
+		return partnerName;
 	}
 	
 	

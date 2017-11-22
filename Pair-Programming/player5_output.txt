@@ -1,0 +1,53 @@
+Player 5's hand is [9, 13, 6, 14, 21, 19, 12, 2, 16, 18].
+Player 5 has discarded a pebble of weight 19 to bag B
+Player 5 has retrieved a pebble of weight 13 from Y
+Player 5's hand is [9, 13, 6, 14, 21, 12, 2, 16, 18, 13]
+Player 5 has discarded a pebble of weight 9 to bag A
+Player 5 has retrieved a pebble of weight 20 from X
+Player 5's hand is [13, 6, 14, 21, 12, 2, 16, 18, 13, 20]
+Player 5 has discarded a pebble of weight 2 to bag A
+Player 5 has retrieved a pebble of weight 16 from X
+Player 5's hand is [13, 6, 14, 21, 12, 16, 18, 13, 20, 16]
+Player 5 has discarded a pebble of weight 21 to bag C
+Player 5 has retrieved a pebble of weight 19 from Z
+Player 5's hand is [13, 6, 14, 12, 16, 18, 13, 20, 16, 19]
+Player 5 has discarded a pebble of weight 19 to bag A
+Player 5 has retrieved a pebble of weight 5 from X
+Player 5's hand is [13, 6, 14, 12, 16, 18, 13, 20, 16, 5]
+Player 5 has discarded a pebble of weight 13 to bag C
+Player 5 has retrieved a pebble of weight 21 from Z
+Player 5's hand is [6, 14, 12, 16, 18, 13, 20, 16, 5, 21]
+Player 5 has discarded a pebble of weight 18 to bag C
+Player 5 has retrieved a pebble of weight 11 from Z
+Player 5's hand is [6, 14, 12, 16, 13, 20, 16, 5, 21, 11]
+Player 5 has discarded a pebble of weight 13 to bag A
+Player 5 has retrieved a pebble of weight 2 from X
+Player 5's hand is [6, 14, 12, 16, 20, 16, 5, 21, 11, 2]
+Player 5 has discarded a pebble of weight 5 to bag C
+Player 5 has retrieved a pebble of weight 13 from Z
+Player 5's hand is [6, 14, 12, 16, 20, 16, 21, 11, 2, 13]
+Player 5 has discarded a pebble of weight 13 to bag A
+Player 5 has retrieved a pebble of weight 13 from X
+Player 5's hand is [6, 14, 12, 16, 20, 16, 21, 11, 2, 13]
+Player 5 has discarded a pebble of weight 12 to bag A
+Player 5 has retrieved a pebble of weight 14 from X
+Player 5's hand is [6, 14, 16, 20, 16, 21, 11, 2, 13, 14]
+Player 5 has discarded a pebble of weight 16 to bag A
+Player 5 has retrieved a pebble of weight 2 from X
+Player 5's hand is [6, 14, 16, 20, 21, 11, 2, 13, 14, 2]
+Player 5 has discarded a pebble of weight 16 to bag C
+Player 5 has retrieved a pebble of weight 8 from Z
+Player 5's hand is [6, 14, 20, 21, 11, 2, 13, 14, 2, 8]
+Player 5 has discarded a pebble of weight 13 to bag C
+Player 5 has retrieved a pebble of weight 19 from Z
+Player 5's hand is [6, 14, 20, 21, 11, 2, 14, 2, 8, 19]
+Player 5 has discarded a pebble of weight 20 to bag B
+Player 5 has retrieved a pebble of weight 7 from Y
+Player 5's hand is [6, 14, 21, 11, 2, 14, 2, 8, 19, 7]
+Player 5 has discarded a pebble of weight 14 to bag C
+Player 5 has retrieved a pebble of weight 6 from Z
+Player 5's hand is [6, 14, 21, 11, 2, 2, 8, 19, 7, 6]
+Player 5 has discarded a pebble of weight 11 to bag A
+Player 5 has retrieved a pebble of weight 1 from X
+Player 5's hand is [6, 14, 21, 2, 2, 8, 19, 7, 6, 1]
+Player 4 has won.
