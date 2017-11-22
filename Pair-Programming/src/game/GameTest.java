@@ -4,7 +4,6 @@ import static org.junit.Assert.*;
 import static org.junit.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.*;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
@@ -15,7 +14,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-public class junit4 {
+public class GameTest {
 	
 	private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
 	private final ByteArrayOutputStream errContent = new ByteArrayOutputStream();
@@ -56,8 +55,26 @@ public class junit4 {
 	@Test
 	public void testUnknownFileInput() {
 
-		PebbleGame.getFile("unknown.txt", 3, 0);
+		PebbleGame.getFile("unknownTest.txt", 3, 0);
 		String expected = "File Not Found ";
+		
+		assertEquals(expected, outContent.toString());
+	}
+	
+	@Test
+	public void testwrongFileInput() {
+
+		PebbleGame.getFile("wrongTest.txt", 3, 0);
+		String expected = "Invalid value found in file";
+		
+		assertEquals(expected, outContent.toString());
+	}
+	
+	@Test
+	public void testTooShortFileInput() {
+
+		PebbleGame.getFile("smallTest.txt", 3, 0);
+		String expected = "Bagsize is insufficient";
 		
 		assertEquals(expected, outContent.toString());
 	}

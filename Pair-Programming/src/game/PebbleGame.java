@@ -56,7 +56,7 @@ public class PebbleGame {
 			try {
 				bag.add(Integer.parseInt(input.next().trim()));
 			} catch (NumberFormatException e) {
-				System.out.println("Invalid value found in file " + (index + 1));
+				System.out.println("Invalid value found in file");
 				System.exit(0);
 			}
 			// Checks if number of players is 11x the number of elements in bagArray and
